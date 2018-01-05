@@ -1,0 +1,126 @@
+\def\pgfcalendarweekdayletter#1{
+
+\ifcase#1L\or M\or M\or J\or V\or S\or D\fi
+}
+\ganttset{
+%
+calendar week text={
+%
+\startday~\pgfcalendarmonthshortname{\startmonth}~\startyear
+%
+}
+%
+}
+\shorthandoff{:!}
+\noindent\resizebox{\textwidth}{!}{
+    
+    \begin{ganttchart}[
+        hgrid,
+        vgrid,
+        x unit=4mm,
+            group label font=\tiny,
+            title label font=\small,
+            y unit chart = 1cm,
+            y unit title = 0.8cm,
+            bar/.append style={fill=blue!20},
+            milestone/.append style={fill=red!70},
+        time slot format=little-endian
+        ]{04/04/2016}{10/06/2016}
+        
+        \gantttitlecalendar{week=1, weekday=letter} \\
+				
+				%% NEXT
+				\ganttbar{0}{04/04/2016}{06/04/2016}\\
+				\ganttbar{1}{06/04/2016}{07/04/2016}\\
+				\ganttbar{2}{07/04/2016}{11/04/2016}\\
+				\ganttbar{3}{11/04/2016}{15/04/2016}\\
+				\ganttbar{4}{06/06/2016}{06/06/2016}\\
+				\ganttbar{5}{07/06/2016}{07/06/2016}\\
+				
+				%% LINK NEXT
+				\ganttlink{elem0}{elem1}
+				\ganttlink{elem1}{elem2}
+				\ganttlink{elem2}{elem3}
+				
+				%% QUIZZBOX
+				\ganttbar{6}{18/04/2016}{18/04/2016}\\
+				\ganttbar{7}{19/04/2016}{19/04/2016}\\
+				\ganttbar{8}{20/04/2016}{22/04/2016}\\
+				
+				%% LINK QUIZZBOX
+				\ganttlink{elem6}{elem7}
+				\ganttlink{elem7}{elem8}
+				
+				%% QB
+				\ganttbar{9}{25/04/2016}{27/04/2016}\\
+				\ganttbar{10}{27/04/2016}{29/04/2016}\\
+				\ganttbar{11}{02/05/2016}{03/05/2016}\\
+				\ganttbar{12}{03/05/2016}{04/05/2016}\\
+				\ganttbar{13}{09/05/2016}{11/05/2016}\\
+				\ganttbar{14}{12/05/2016}{13/05/2016}\\
+				\ganttbar{15}{17/05/2016}{18/05/2016}\\
+				\ganttbar{16}{17/05/2016}{19/05/2016}\\
+				\ganttbar{17}{19/05/2016}{20/05/2016}\\
+				\ganttmilestone{18}{20/05/2016}\\
+				\ganttbar{19}{23/05/2016}{24/05/2016}\\
+				\ganttbar{20}{25/05/2016}{26/05/2016}\\
+				\ganttbar{21}{27/05/2016}{01/06/2016}\\
+				\ganttbar{22}{01/06/2016}{03/06/2016}\\
+				\ganttbar{23}{08/06/2016}{09/06/2016}\\
+				%% LINK QB
+				\ganttlink{elem9}{elem10}
+				\ganttlink{elem10}{elem11}
+				\ganttlink{elem11}{elem12}
+				\ganttlink{elem12}{elem13}
+				\ganttlink{elem13}{elem14}
+				\ganttlink{elem14}{elem15}
+				\ganttlink{elem15}{elem16}
+				\ganttlink{elem16}{elem17}
+				\ganttlink{elem17}{elem18}
+				\ganttlink{elem18}{elem19}
+				\ganttlink{elem19}{elem20}
+				\ganttlink{elem20}{elem21}
+				\ganttlink{elem21}{elem22}
+				
+				\ganttlink{elem22}{elem4}
+				\ganttlink{elem4}{elem5}
+				\ganttlink{elem5}{elem23}
+				\ganttlink{elem3}{elem6}
+				\ganttlink{elem8}{elem9}
+        
+    \end{ganttchart}
+}
+
+\begin{table}[]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+0 & Formation Symfony2 \\ \hline
+\multicolumn{2}{|c|}{\textbf{Refonte Nextmedia partie Administration}} \\ \hline
+1 & Scroll Analytics \\ \hline
+2 & Refonte graphique \\ \hline
+3 & Gestion AJAX \\ \hline
+4 & Déploiement Capistrano \\ \hline
+5 & Ajout interface web de traduction \\ \hline
+\multicolumn{2}{|c|}{\textbf{Analyse QuizzBox MacOS}} \\ \hline
+6 & Découverte application \\ \hline
+7 & Recoupement des variables \\ \hline
+8 & Etablissement des règles de gestion \\ \hline
+\multicolumn{2}{|c|}{\textbf{Développement QBStore}} \\ \hline
+9 & Gestion des téléchargements \\ \hline
+10 & Ajout historique \\ \hline
+11 & Filtres questionnaires \\ \hline
+12 & Champ de recherche page version \\ \hline
+13 & Version de démonstration \\ \hline
+14 & Récupération utilisateurs depuis Access \\ \hline
+15 & Mail template POC \\ \hline
+16 & Implémentation Mail Template \\ \hline
+17 & Correction de bugs \\ \hline
+18 & Réunion mi parcours \\ \hline
+19 & Capistrano \\ \hline
+20 & Ajout WebService liaison Access \\ \hline
+21 & Recherches façons optimale de traduire un site \\ \hline
+22 & Implémentation de la solution : Interface de traduction web \\ \hline
+23 & Inscription par domaine \\ \hline
+\end{tabular}
+\end{table}
