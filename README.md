@@ -1,5 +1,7 @@
 # LaTeX-starterkit
 
+[![Build Status](https://travis-ci.org/sylvainmetayer/LaTeX-starterkit.svg?branch=master)](https://travis-ci.org/sylvainmetayer/LaTeX-starterkit)
+
 > Sylvain METAYER
 
 ## Prerequisites
