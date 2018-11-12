@@ -5,6 +5,9 @@
 ## Prerequisites
 
 - `texlive-full`
+- `python-pygments`
+- `make`
+- `aspell aspell-fr` (or `aspell-en` if you want to use english)
 
 ## Build
 
