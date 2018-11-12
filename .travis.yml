@@ -1,0 +1,31 @@
+sudo: require
+dist: xenial
+language: bash
+
+addons:
+  apt:
+    packages:
+      - texlive-full
+before_install:
+ - sudo apt-get install python-pygments make aspell aspell-fr aspell-en
+cache:
+  directories:
+    - /tmp/texlive
+    - $HOME/.texlive
+  apt: true
+before_script: cd $TRAVIS_BUILD_DIR/
+script:
+  - make build
+  - make ci-spellcheck
+deploy:
+  provider: releases
+  skip_cleanup: true
+  before_deploy: "make soft_clean"
+  api_key:
+    secure: $CI_TOKEN
+  file:
+    - ./main.pdf
+  on:
+    branch: master
+    tags: true
+
