@@ -9,7 +9,6 @@
 - `texlive-full`
 - `python-pygments`
 - `make`
-- `aspell aspell-fr` (or `aspell-en` if you want to use english)
 
 ## Build
 
@@ -19,14 +18,12 @@ The PDF will be generated in `main.pdf`
 
 ## Tags
 
-- `git tag -a v1.4 -m "my version 1.4"`
-
-Then remember to push tags with `git push --tags`
+- `make tag`
 
 ## Travis CI
 
 A basic travis CI build is provided.
 
-This will generate a PDF from sources, and perform a basic spellcheck (in french).
+This will generate a PDF from sources on every tag on master.
 
 PDF will be published in Github Release on every tags.
